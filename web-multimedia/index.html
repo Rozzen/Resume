@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>Web multimedia app</title>
+</head>
+
+<body class="flex-column" onkeydown="galleryHotkeyScroll.handleKeydown(event);">
+    <section id="gallery" autofocus>
+        <figure>
+            <img src="img/pexels-stephan-seeber-1054218.jpg" />
+            <figcaption>Mils, Austria, Stephan Seeber, 2018</figcaption>
+        </figure>
+        <figure>
+            <img src="img/pexels-francesco-ungaro-2908892.jpg" />
+            <figcaption>Francesco Ungaro, 2019</figcaption>
+        </figure>
+        <figure>
+            <img src="img/pexels-lil-artsy-2397622.jpg" />
+            <figcaption>Austria, Lil Artsy, 2019</figcaption>
+        </figure>
+        <figure>
+            <img src="img/pexels-francesco-ungaro-3793773.jpg">
+            <figcaption>Francesco Ungaro, 2020</figcaption>
+        </figure>
+        <figure>
+            <img src="img/pexels-joan-costa-3384588.jpg" />
+            <figcaption>Switzerland, Joan Costa, 2019</figcaption>
+        </figure>
+        <figure>
+            <img src="img/pexels-francesco-ungaro-2835436.jpg" />
+            <figcaption>France, Francesco Ungaro, 2019</figcaption>
+        </figure>
+        <figure>
+            <img src="img/pexels-stephan-seeber-1054164.jpg" />
+            <figcaption>Innsbruck, Austria, Stephan Seeber, 2018</figcaption>
+        </figure>
+        <figure>
+            <img src="img/pexels-francesco-ungaro-4675488.jpg" />
+            <figcaption>Lombardia, Italy, Francesco Ungaro, 2020</figcaption>
+        </figure>
+    </section>
+    <section id="controls" class="flex-row">
+        <button class="icon" onclick="gallery.scrollToNthFigure(0)">
+            <img src="icons/first.svg">
+        </button>
+        <button class="icon" onclick="gallery.scrollToAdjacentCyclically(-1)">
+            <img src="icons/back.svg">
+        </button>
+        <button class="icon" onclick="slideshowControl.reset()">
+            <img src="icons/replay.svg">
+        </button>
+        <button class="icon" id="slideshow-control" onclick="slideshowControl.togglePlayback()">
+            <img class="stopped" src="icons/play.svg">
+            <img class="playing" src="icons/pause.svg">
+        </button>
+        <button class="icon" onclick="slideshowDetails.open()">
+            <img src="icons/tune.svg">
+        </button>
+        <button class="icon" onclick="gallery.scrollToAdjacentCyclically(1)">
+            <img src="icons/forward.svg">
+        </button>
+        <button class="icon" onclick="gallery.scrollToNthFigure(-1)">
+            <img src="icons/last.svg">
+        </button>
+    </section>
+    <canvas id="audio-visuals"></canvas>
+    <dialog id="slideshow-details" onclick="slideshowDetails.handleClick(event);">
+        <form method="dialog" class="flex-column" onsubmit="slideshowDetails.process();">
+            <div class="flex-row">
+                <label>
+                    <input type="checkbox" name="autoscroll" value="on" checked
+                        id="autoscroll-switch">
+                    Autoscroll with interval:
+                </label>
+                <label>
+                    <input type="number" name="autoscroll-interval" min="1" value="5"
+                        id="autoscroll-interval">
+                    second(s)
+                </label>
+            </div>
+            <fieldset name="audio" id="audio-options">
+                <legend>Soundtrack</legend>
+                <label>
+                    <input type="radio" name="audio" value="" checked>
+                    <span>None</span>
+                </label>
+                <label>
+                    <input type="radio" name="audio" value="audio/einaudi-experience.mp3">
+                    <span>Einaudi – Experience</span>
+                </label>
+                <label>
+                    <input type="radio" name="audio" value="audio/rammstein-deutschland.mp3">
+                    <span>Rammstein – Deutschland</span>
+                </label>
+                <label>
+                    <input type="radio" name="audio" value="audio/billie-eilish-ocean-eyes.mp3">
+                    <span>Billie Eilish – Ocean Eyes</span>
+                </label>
+                <template id="custom-audio-option">
+                    <label>
+                        <input type="radio" name="audio" value="">
+                        <slot name="filename"></span>
+                    </label>
+                </template>
+            </fieldset>
+            <div class="flex-row">
+                <label class="accent-block">
+                    Upload Soundtrack
+                    <input type="file" id="custom-audio-input" class="hidden" accept="audio/*">
+                </label>
+                <input type="submit" value="Run Slideshow" class="accent-block">
+            </div>
+        </form>
+    </dialog>
+</body>
+
+</html>

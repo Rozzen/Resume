@@ -1,0 +1,167 @@
+:root {
+    --base-color: #282A2C;
+    --neutral-color: #ffffff;
+    --accent-color: #282A2C;
+    --length-unit: 1em;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+    color: var(--base-color);
+    background-color: var(--neutral-color);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+#audio-visuals {
+    width: 1500px;
+    height: 50px;
+}
+
+#gallery,
+#gallery img {
+    width: 800px;
+    height: 500px;
+}
+
+/* GALLERY */
+
+#gallery img {
+    object-fit: cover;
+    object-position: center bottom;
+}
+
+#gallery {
+    display: flex;
+    gap: var(--length-unit);
+    overflow-y: hidden;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overscroll-behavior: contain;
+}
+
+#gallery figure {
+    margin: 0;
+    position: relative;
+    scroll-snap-align: center;
+}
+
+#gallery figcaption {
+    position: absolute;
+    bottom: var(--length-unit);
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    width: max-content;
+    max-width: 95%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: var(--neutral-color);
+    background-color: var(--base-color);
+    padding: 0.25em 1em;
+    font-size: 0.95em;
+}
+
+/* INPUT & DIALOG */
+
+input,
+button {
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: 100%;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    margin: 0 0.25em;
+}
+
+input[type="checkbox"]:enabled,
+input[type="radio"]:enabled {
+    cursor: pointer;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+#autoscroll-interval {
+    text-align: center;
+    width: 8ch;
+}
+
+#slideshow-details fieldset label {
+    display: block;
+    cursor: pointer;
+    margin: 0.5em 1em;
+}
+
+#slideshow-details fieldset {
+    border-color: var(--base-color);
+    min-width: 30ch;
+}
+
+dialog {
+    width: max-content;
+    min-width: 20%;
+    max-width: 80%;
+    border: none;
+}
+
+dialog::backdrop {
+    background-color: black;
+    opacity: 0.5;
+}
+
+/* CONTROLS */
+
+#slideshow-control:not(.playing) img.playing,
+#slideshow-control.playing img:not(.playing) {
+    display: none;
+}
+
+.icon,
+.accent-block {
+    background-color: var(--base-color);
+    color: var(--neutral-color);
+    border: none;
+    padding: 0.5em 1em;
+    font-size: 1.15em;
+    cursor: pointer;
+}
+
+.icon {
+    line-height: 0;
+}
+
+.icon img {
+    height: 1.5em;
+}
+
+/* LAYOUT */
+
+.flex-row,
+.flex-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--length-unit);
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
