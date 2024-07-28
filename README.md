@@ -1,9 +1,9 @@
 # Мизевич Илья
 ## Контакты
-Телефон: +7 913 585 96 21  
-Email: mizevich1@mail.ru  
-Город: Санкт-Петербург. 
-TG: https://t.me/zirsar02
+- Телефон: +7 913 585 96 21  
+- Email: mizevich1@mail.ru  
+- Город: Санкт-Петербург
+- TG: https://t.me/zirsar02
 
 ---
 
