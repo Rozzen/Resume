@@ -17,8 +17,8 @@ TG: https://t.me/zirsar02
 ## Навыки
 - **Языки программирования:** PHP, PostgreSQL, SQLite, Javascript, Python, C++, HTML, CSS, Typescript, C++
 - **Фреймворки и библиотеки:** React, jQuery, Angular, Django, JUnit
-- **Инструменты и технологии:** Linux, Git, Trello, Docker, Инжиниринг ПО
-- **Системы автоматической сборки:** Ant, Make, CMake, Maven
+- **Инструменты и технологии:** Linux, Git, Trello, Docker, YouTrack, Инжиниринг ПО
+- **Системы автоматической сборки:** Make, CMake, Maven
 - **Soft Skills:** Трудолюбие, комуникабельность, тайменеджмент
 
 ---
