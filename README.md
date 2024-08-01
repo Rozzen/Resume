@@ -16,7 +16,7 @@
 
 ## Навыки
 - **Языки программирования:** Java, PHP, PostgreSQL, SQLite, Javascript, Python, C++, HTML, CSS, Typescript, C++
-- **Фреймворки и библиотеки:** React, jQuery, Angular, Django, JUnit
+- **Фреймворки и библиотеки:** React, jQuery, Angular, Django, JUnit Selenium, TestNG
 - **Инструменты и технологии:** Linux, Git, Trello, Docker, YouTrack, Инжиниринг ПО
 - **Системы автоматической сборки:** Make, CMake, Maven
 - **Soft Skills:** Трудолюбие, комуникабельность, тайменеджмент
